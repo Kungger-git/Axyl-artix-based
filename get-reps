@@ -1,0 +1,18 @@
+#!/bin/bash
+
+org="https://github.com/axyl-os/"
+
+declare -a base_repos=(
+axyl-artix-iso
+artixlinux-docker
+axyl-artix-scripts
+)
+
+declare -a wm_repos=(
+axyl-riverwm
+)
+
+mkdir -p ./base_repos ./wm_repos
+
+(cd ./base_repos; for i in ${base_repos[@]}; do (git clone ${org}${i}); done)
+(cd ./wm_repos; for i in ${wm_repos[@]}; do (git clone ${org}${i}); done)
